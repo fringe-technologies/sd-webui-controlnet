@@ -197,7 +197,8 @@ def build_model_by_guess(state_dict, unet, model_path):
             state_dict = final_state_dict
 
         config['use_fp16'] = devices.dtype_unet == torch.float16
-
+        if 'midasgenerate' in model_path:
+            config['in_channels'] = 9 
         network = PlugableControlModel(config, state_dict)
         network.to(devices.dtype_unet)
         return network
