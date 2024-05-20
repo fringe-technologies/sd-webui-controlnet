@@ -1,4 +1,9 @@
-mediapipe
-svglib
 fvcore
+mediapipe
 opencv-python>=4.8.0
+svglib
+addict
+yapf
+albumentations==1.4.3
+matplotlib
+facexlib
